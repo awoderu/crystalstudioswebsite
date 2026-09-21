@@ -13,7 +13,7 @@ const DisplayLayer = () => {
             >
 
                 {/* Background Video */}
-                <a href="/Home">
+                <Link to="/Home">
                 <video
                     className="absolute  w-[100vw] h-[100vh] object-fill mt-1"
                     src={backgroundVideo}
@@ -22,7 +22,7 @@ const DisplayLayer = () => {
                     muted
                     playsInline
                 />
-                 </a>
+                 </Link>
 
       {/* Dark overlay */}
       {/* <div className="absolute inset-0 bg-black/40"></div> */}

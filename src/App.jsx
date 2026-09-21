@@ -21,9 +21,7 @@ function App() {
      
         <Routes>
           <Route path="/" element={<DisplayLayer />} />
-          <Route path="/Home" element={<Home />} />
-          
-          
+          <Route path="/Home" element={<Home />} />  
         </Routes>
       {/* <Home/> */}
         
