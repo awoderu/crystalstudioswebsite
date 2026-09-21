@@ -72,20 +72,22 @@ export default function ProductPage() {
       <div className="relative mx-auto flex min-h-screen w-[calc(100%-40px)] max-w-[860px] flex-wrap py-[100px]">
 
         {/* Product information */}
-        <div className="relative z-20 ml-[500px] block text-left max-[991px]:ml-0 max-[991px]:mt-[320px] max-[991px]:w-full max-[991px]:text-center">
+        <div className="relative z-20 ml-[500px] block text-left max-[991px]:ml-0 
+        max-[991px]:mt-[320px] max-[991px]:w-full max-[991px]:text-center">
 
-          <p className="mb-[10px] text-[13px] font-bold uppercase leading-tight tracking-[1px]">
-            Modern Chair
+          <p className="mb-[10px] text-[13px] font-bold uppercase leading-tight 
+          tracking-[1px]">
+            Girl Hoodie
           </p>
 
           <h2 className="mb-[10px] text-[34px] font-extrabold leading-tight max-[575px]:text-[28px]">
-            Sella Gastro
+            
           </h2>
 
           <h4 className="mb-[30px] text-[26px] font-medium leading-tight">
-            $174{" "}
+            $30{" "}
             <span className="pl-[15px] text-[20px] opacity-60 line-through">
-              $237
+              $65
             </span>
           </h4>
 
