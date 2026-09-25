@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { navLinks } from '../constants'
 
 const Navbar = () => {
@@ -25,7 +26,9 @@ const Navbar = () => {
                 </button>
                 <button>
                 
-                        <img src="/cart.svg" alt="Cart" />
+                       <Link to="/cart">
+                           <img  src="/cart.svg" alt="Cart" />
+                       </Link>
 
                 </button>
 

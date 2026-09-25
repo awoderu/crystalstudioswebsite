@@ -55,27 +55,39 @@ export default function ProductPage() {
 
   return (
     <div
-      className="elative min-h-screen w-full overflow-hidden font-poppins text-white bg-black scroll-padding-top-[100px]"
+      className="relative py-[100px] md:py-[100px]   justify-between min-h-screen w-full overflow-hidden font-poppins text-white bg-black scroll-padding-top-[100px]"
       style={{
         background: chair.background,
       }}
     >
       {/* Background */}
       <div
-        className="fixed inset-0 z-0 transition-all duration-500 bg-black"
+        className="fixed inset-0 z-0 transition-all duration-500 bg-black  "
         // style={{
         //   background: chair.background,
         // }}
       />
 
       {/* Main container */}
-      <div className="relative mx-auto flex min-h-screen w-[calc(100%-40px)] max-w-[860px] flex-wrap py-[100px]">
+      <div className="relative  mx-auto flex min-h-screen w-[calc(100%-40px)] max-w-[860px] flex-wrap">
+
+        <div className="relative left-0  z-10 h-[410px] w-[500px] 
+        transition-all duration-500 max-[991px]:left-1/2 max-[991px]:top-[100px] max-[991px]:h-[280px] 
+        max-[991px]:w-[375px] max-[991px]:-translate-x-1/2 max-[575px]:w-[280px]">
+
+          <img
+            key={selectedChair}
+            src={chair.image}
+            alt="Modern chair"
+            className="h-full w-full mt-0 object-contain animate-[shake_0.7s_ease-in-out]"
+          />
+        </div>
 
         {/* Product information */}
-        <div className="relative z-20 ml-[500px] block text-left max-[991px]:ml-0 
-        max-[991px]:mt-[320px] max-[991px]:w-full max-[991px]:text-center">
+        <div className="relative  ml-[600px] mt-[10px]  block text-left max-[991px]:ml-0 
+         max-[991px]:w-full max-[991px]:text-center">
 
-          <p className="mb-[10px] text-[13px] font-bold uppercase leading-tight 
+          <p className="mb-[10px] mt-[40px] text-[13px] font-bold uppercase leading-tight 
           tracking-[1px]">
             Girl Hoodie
           </p>
@@ -85,9 +97,9 @@ export default function ProductPage() {
           </h2>
 
           <h4 className="mb-[30px] text-[26px] font-medium leading-tight">
-            $30{" "}
+            25,000{" "}
             <span className="pl-[15px] text-[20px] opacity-60 line-through">
-              $65
+              50,000
             </span>
           </h4>
 
@@ -125,8 +137,7 @@ export default function ProductPage() {
             {activeTab === "description" && (
               <div className="pt-[20px] pb-[30px] transition-all duration-300">
                 <p className="text-[16px] leading-[1.7]">
-                  The chair construction is made of ash tree.
-                  Upholstery and wood color at customer's request.
+                  If im a b****, then im the baddest b****
                 </p>
               </div>
             )}
@@ -180,13 +191,30 @@ export default function ProductPage() {
           </div>
 
           {/* Upholstery */}
-          <h5 className="mb-[20px] text-[18px] font-semibold">
+          {/* <h5 className="mb-[5px] text-[18px] font-semibold">
             Choose upholstery:
-          </h5>
+          </h5> */}
+
+
+
+
+          <button
+            className="mt-[20px] flex h-[48px] w-[210px] z-50 items-center 
+            justify-center bg-white gap-2 rounded-[4px] text-[14px] font-medium 
+            tracking-[1px] text-black shadow-[0_6px_15px_rgba(16,39,112,0.15)] transition-all 
+            duration-300 hover:bg-white cursor-pointer hover:shadow-[0_12px_35px_rgba(16,39,112,0.25)] 
+            max-[991px]:mx-auto"
+            // style={{
+            //   backgroundColor: chair.button,
+            // }}
+          >
+            <ShoppingCart size={20} />
+            Add To Cart
+          </button>
         </div>
 
         {/* Color selectors */}
-        <div className="relative z-20 ml-[500px] flex gap-[10px] max-[991px]:mx-auto max-[991px]:ml-0 max-[991px]:justify-center">
+        {/* <div className="relative z-20 ml-[500px] flex gap-[10px] max-[991px]:mx-auto max-[991px]:ml-0 max-[991px]:justify-center">
 
           {chairs.map((item) => (
             <button
@@ -204,35 +232,17 @@ export default function ProductPage() {
             />
           ))}
 
-        </div>
+        </div> */}
 
         {/* Add to cart */}
         <div className="relative z-20 ml-[500px] max-[991px]:mx-auto max-[991px]:ml-0 items-center justify-center pl-18">
 
-          <button
-            className="mt-[50px] flex h-[48px] w-[210px] items-center justify-center  gap-2 rounded-[4px] text-[14px] font-medium tracking-[1px] text-white shadow-[0_6px_15px_rgba(16,39,112,0.15)] transition-all duration-300 hover:bg-black hover:shadow-[0_12px_35px_rgba(16,39,112,0.25)] max-[991px]:mx-auto"
-            style={{
-              backgroundColor: chair.button,
-            }}
-          >
-            <ShoppingCart size={20} />
-            Add To Cart
-          </button>
+          
 
         </div>
 
         {/* Chair image */}
-        <div className="pointer-events-none absolute left-0 top-[100px] z-10 h-[410px] w-[500px] transition-all duration-500 max-[991px]:left-1/2 max-[991px]:top-[100px] max-[991px]:h-[308px] max-[991px]:w-[375px] max-[991px]:-translate-x-1/2 max-[575px]:w-[280px]">
-
-          <img
-            key={selectedChair}
-            src={chair.image}
-            alt="Modern chair"
-            className="h-full w-full object-contain animate-[shake_0.7s_ease-in-out]"
-          />
-
-        </div>
-
+        
       </div>
     </div>
   );

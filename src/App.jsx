@@ -7,14 +7,15 @@ import './App.css'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'  
 import Product from './components/product'
+import Cart from './pages/cart'
 import DisplayLayer from './pages/displaylayer'
 import { Link } from 'react-router-dom'
 
 function App() {
   
-
   return (
     <>
+    <Navbar />
     <BrowserRouter>
   
     
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DisplayLayer />} />
           <Route path="/Home" element={<Home />} />  
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       {/* <Home/> */}
         
