@@ -1,5 +1,9 @@
 export const navLinks = [
-    { label: "Home" },
-    { label: "Store" },
+    { label: "Home",
+        link: "/displaylayer"
+     },
+    { label: "Store",
+        link: "/store"
+     },
     
 ];

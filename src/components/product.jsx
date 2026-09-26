@@ -69,11 +69,10 @@ export default function ProductPage() {
       />
 
       {/* Main container */}
-      <div className="relative  mx-auto flex min-h-screen w-[calc(100%-40px)] max-w-[860px] flex-wrap">
+      <div className="relative mx-auto flex min-h-screen w-[calc(100%-40px)] max-w-[860px] flex-wrap">
 
-        <div className="relative left-0  z-10 h-[410px] w-[500px] 
-        transition-all duration-500 max-[991px]:left-1/2 max-[991px]:top-[100px] max-[991px]:h-[280px] 
-        max-[991px]:w-[375px] max-[991px]:-translate-x-1/2 max-[575px]:w-[280px]">
+        <div className="relative z-10 h-[410px] w-[500px] 
+        transition-all duration-500">
 
           <img
             key={selectedChair}
@@ -84,7 +83,7 @@ export default function ProductPage() {
         </div>
 
         {/* Product information */}
-        <div className="relative  ml-[600px] mt-[10px]  block text-left max-[991px]:ml-0 
+        <div className="relative  mt-[20px] gap-x-7 block text-left max-[991px]:ml-0 
          max-[991px]:w-full max-[991px]:text-center">
 
           <p className="mb-[10px] mt-[40px] text-[13px] font-bold uppercase leading-tight 

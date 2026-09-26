@@ -15,11 +15,9 @@ function App() {
   
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     <BrowserRouter>
-  
-    
-     
+      <Navbar />
         <Routes>
           <Route path="/" element={<DisplayLayer />} />
           <Route path="/Home" element={<Home />} />  
