@@ -1,9 +1,11 @@
+
+
 export const navLinks = [
     { label: "Home",
-        link: "/displaylayer"
+        link: "/"
      },
-    { label: "Store",
-        link: "/store"
+    { label: "Shop",
+        link: "/Shop"
      },
     
 ];

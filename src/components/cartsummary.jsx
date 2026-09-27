@@ -1,6 +1,20 @@
-import React from "react";
+import { useContext } from "react";
+import { ShopContext } from "../context/shopcontext";
 
-const CartSummary = () => {
+export default function CartSummary() {
+  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+
+  const totalItems = Object.values(cartItems).reduce(
+    (sum, quantity) => sum + quantity,
+    0
+  );
+
+  const subtotal = getTotalCartAmount();
+
+  const discount = subtotal * 0.2;
+  const deliveryFee = 15;
+  const total = subtotal - discount + deliveryFee;
+
   return (
     <div className="rounded-3xl border border-neutral-300 p-4 xl:p-6 xl:w-full xl:h-94">
       <h1 className="mb-4 text-2xl font-semibold xl:text-3xl">Order Summary</h1>
@@ -8,28 +22,28 @@ const CartSummary = () => {
       <div className="space-y-2 text-sm xl:text-base">
         <div className="flex justify-between">
           <p className="text-gray-600">Subtotal</p>
-          {/* <p className="font-semibold">${subtotal}</p> */}
+          <p className="font-semibold">₦{subtotal}</p>
         </div>
 
         <div className="flex justify-between">
           <p className="text-gray-600">Total Item</p>
-          {/* <p className="font-semibold">${totalItems}</p> */}
+          <p className="font-semibold">₦{totalItems}</p>
         </div>
 
         <div className="flex justify-between">
           <p className="text-gray-600">Discount (-20%)</p>
-          {/* <p className="font-semibold text-red-600">${discount}</p> */}
+          <p className="font-semibold text-red-600">-₦{discount}</p>
         </div>
 
         <div className="flex justify-between border-b border-neutral-300 pb-4">
           <p className="text-gray-600">Delivery Fee</p>
-          {/* <p className="font-semibold">${deliveryFee}</p> */}
+          <p className="font-semibold">₦{deliveryFee}</p>
         </div>
       </div>
 
       <div className="mt-4 flex justify-between text-lg font-semibold xl:text-xl">
         <p>Total</p>
-        {/* <p>${total}</p> */}
+        <p>₦{total}</p>
       </div>
 
       <button className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-3xl bg-black
@@ -39,6 +53,4 @@ const CartSummary = () => {
       </button>
     </div>
   );
-};
-
-export default CartSummary;
+}

@@ -1,34 +1,37 @@
-import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+
 import './App.css'
-import Home from './pages/Home'
-import Navbar from './components/Navbar'  
-import Product from './components/product'
-import Cart from './pages/cart'
+import Navbar from './components/Navbar'
+import Shop from './pages/Shop'
 import DisplayLayer from './pages/displaylayer'
-import { Link } from 'react-router-dom'
+
+import Cart from './pages/cart'
+import { ShopContextProvider } from './context/shopcontext'
+
+function AppLayout() {
+  const { pathname } = useLocation()
+  const isDisplayLayer = pathname === '/'
+
+  return (
+    <>
+      {!isDisplayLayer && <Navbar />}
+      <Routes>
+        <Route path="/" element={<DisplayLayer />} />
+        <Route path="/Shop" element={<Shop />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </>
+  )
+}
 
 function App() {
   
   return (
-    <>
-    {/* <Navbar /> */}
-    <BrowserRouter>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<DisplayLayer />} />
-          <Route path="/Home" element={<Home />} />  
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      {/* <Home/> */}
-        
-        
-    </BrowserRouter>
-      
-    </>
+    <ShopContextProvider>
+      <BrowserRouter>
+        <AppLayout />
+      </BrowserRouter>
+    </ShopContextProvider>
   )
 }
 

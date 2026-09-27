@@ -1,4 +1,4 @@
-import girlhoodie from "../assets/images/girl_hoodie.png";
+import girlhoodie from "../assets/girl_hoodie.png";
 
 export const Products = [
   {

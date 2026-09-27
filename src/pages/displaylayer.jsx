@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import backgroundVideo from '../assets/background.mp4';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 
 const DisplayLayer = () => {
@@ -27,7 +27,7 @@ const DisplayLayer = () => {
             >
 
                 {/* Background Video */}
-                <Link to="/Home">
+                <Link to="/Shop">
                 <video
                     ref={videoRef}
                     className="absolute  w-[100vw] h-[100vh] object-fill mt-1"
